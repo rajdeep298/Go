@@ -28,6 +28,20 @@ func main() {
 
 		//checking if tickets are remaining or not
 
+		//Method-1
+		// if remaining_ticket == 0 {
+		// 	//now end the program
+		// 	fmt.Println("No remaining tickets")
+		// 	break
+		// }
+
+		//Method-2
+		var not_ticket bool = remaining_ticket == 0
+		if not_ticket {
+			//now end the program
+			fmt.Println("No remaining tickets")
+			break
+		}
 	}
 
 }
