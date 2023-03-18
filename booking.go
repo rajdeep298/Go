@@ -20,6 +20,12 @@ func main() {
 		fmt.Println("\nEnter the amount of tickets buyer wants to book:")
 		fmt.Scan(&buy)
 
+		//checking the user input coreectness
+		if buy > remaining_ticket {
+			fmt.Printf("\nTickets left %d.\nYou cannot book %d tickets\n", remaining_ticket, buy)
+			continue
+		}
+
 		//storing details in an slice
 		bookings = append(bookings, f_name+" "+l_name)
 		remaining_ticket = remaining_ticket - buy //calculating remaining tickets
