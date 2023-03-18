@@ -11,7 +11,7 @@ func main() {
 	var f_name string
 	var l_name string
 	var buy int
-	for {
+	for remaining_ticket > 0 /*or len(bookings) <= 500*/ {
 		//taking basic inputs
 		fmt.Println("Enter the first name of buyer:")
 		fmt.Scan(&f_name)
@@ -23,6 +23,7 @@ func main() {
 		//checking the user input coreectness
 		if buy > remaining_ticket {
 			fmt.Printf("\nTickets left %d.\nYou cannot book %d tickets\n", remaining_ticket, buy)
+			fmt.Printf("\nEnter the correct details.\n")
 			continue
 		}
 
