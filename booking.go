@@ -27,16 +27,19 @@ func main() {
 			continue
 		}
 
-		//storing details in an slice
-		bookings = append(bookings, f_name+" "+l_name)
-		remaining_ticket = remaining_ticket - buy //calculating remaining tickets
-
 		if len(l_name) >= 2 && len(f_name) >= 2 {
+
+			//storing details in an slice
+			bookings = append(bookings, f_name+" "+l_name)
+			remaining_ticket = remaining_ticket - buy //calculating remaining tickets
+
 			//printing basic details
 			fmt.Println(bookings)
 			fmt.Println("Remaining tickets:", remaining_ticket)
+		} else {
+			println("Enter the details correctly\n")
+			continue
 		}
-
 		//checking if tickets are remaining or not
 
 		//Method-1
