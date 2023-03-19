@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
 func main() {
 	var total_ticket int
@@ -8,9 +11,11 @@ func main() {
 	fmt.Scan(&total_ticket)
 	remaining_ticket := total_ticket
 	var bookings []string
+	var mails []string
 	var f_name string
 	var l_name string
 	var buy int
+	var email string
 	for remaining_ticket > 0 /*or len(bookings) <= 500*/ {
 		//taking basic inputs
 		fmt.Println("Enter the first name of buyer:")
@@ -19,6 +24,8 @@ func main() {
 		fmt.Scan(&l_name)
 		fmt.Println("\nEnter the amount of tickets buyer wants to book:")
 		fmt.Scan(&buy)
+		fmt.Println("\nEnter the email of the buyer:")
+		fmt.Scan(&email)
 
 		//checking the user input coreectness
 		if buy > remaining_ticket {
@@ -26,15 +33,17 @@ func main() {
 			fmt.Printf("\nEnter the correct details.\n")
 			continue
 		}
-
-		if len(l_name) >= 2 && len(f_name) >= 2 {
+		vaild := strings.Contains(email, "@")
+		if len(l_name) >= 2 && len(f_name) >= 2 && vaild /*or strings.Contains(email, "@")*/ {
 
 			//storing details in an slice
 			bookings = append(bookings, f_name+" "+l_name)
+			mails = append(mails, email)
 			remaining_ticket = remaining_ticket - buy //calculating remaining tickets
 
 			//printing basic details
 			fmt.Println(bookings)
+			fmt.Println(mails)
 			fmt.Println("Remaining tickets:", remaining_ticket)
 		} else {
 			println("Enter the details correctly\n")
