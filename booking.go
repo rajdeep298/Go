@@ -31,9 +31,11 @@ func main() {
 		bookings = append(bookings, f_name+" "+l_name)
 		remaining_ticket = remaining_ticket - buy //calculating remaining tickets
 
-		//printing basic details
-		fmt.Println(bookings)
-		fmt.Println("Remaining tickets:", remaining_ticket)
+		if len(l_name) >= 2 && len(f_name) >= 2 {
+			//printing basic details
+			fmt.Println(bookings)
+			fmt.Println("Remaining tickets:", remaining_ticket)
+		}
 
 		//checking if tickets are remaining or not
 
