@@ -14,6 +14,7 @@ func main() {
 	var mails []string
 	var f_name string
 	var l_name string
+	var city string
 	var buy int
 	var email string
 	for remaining_ticket > 0 /*or len(bookings) <= 500*/ {
@@ -26,11 +27,23 @@ func main() {
 		fmt.Scan(&buy)
 		fmt.Println("\nEnter the email of the buyer:")
 		fmt.Scan(&email)
-
+		fmt.Println("\nEnter the name of the city")
+		fmt.Scan(&city)
 		//checking the user input coreectness
 		if buy > remaining_ticket {
 			fmt.Printf("\nTickets left %d.\nYou cannot book %d tickets\n", remaining_ticket, buy)
 			fmt.Printf("\nEnter the correct details.\n")
+			continue
+		}
+		switch city {
+		case "Kolkata":
+			fmt.Println("Your venue is Kolkata")
+		case "Delhi":
+			fmt.Println("Your venue is DELHI")
+		case "Bengaluru":
+			fmt.Println("Your venue is BENGALURU")
+		default:
+			fmt.Println("Your city is not available")
 			continue
 		}
 		vaild := strings.Contains(email, "@")
@@ -66,6 +79,7 @@ func main() {
 		// 	fmt.Println("No remaining tickets")
 		// 	break
 		// }
+
 	}
 
 }
