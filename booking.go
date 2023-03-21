@@ -17,7 +17,10 @@ func main() {
 	var city string
 	var buy int
 	var email string
+	conf_name := "Go Conference"
 	for remaining_ticket > 0 /*or len(bookings) <= 500*/ {
+		greetusers(conf_name, remaining_ticket)
+
 		//taking basic inputs
 		fmt.Println("Enter the first name of buyer:")
 		fmt.Scan(&f_name)
@@ -82,4 +85,9 @@ func main() {
 
 	}
 
+}
+
+func greetusers(name string, rem_ticket int) {
+	fmt.Printf("\n\nWelcome to the %v\n", name)
+	fmt.Printf("%v tickets left. Hurry Up!\n", rem_ticket)
 }
