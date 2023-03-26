@@ -5,11 +5,13 @@ import (
 	"strings"
 )
 
+var total_ticket int
+var remaining_ticket = total_ticket
+
 func main() {
-	var total_ticket int
+
 	fmt.Println("Enter the total number of tickets")
 	fmt.Scan(&total_ticket)
-	remaining_ticket := total_ticket
 	var bookings []string
 	var mails []string
 	var f_name string
