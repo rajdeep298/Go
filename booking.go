@@ -5,13 +5,14 @@ import (
 	"strings"
 )
 
-var total_ticket int
-var remaining_ticket = total_ticket
+// var total_ticket int
+// var remaining_ticket = total_ticket// in global variables := will not work
 
 func main() {
-
+	var total_ticket int
 	fmt.Println("Enter the total number of tickets")
 	fmt.Scan(&total_ticket)
+	remaining_ticket := total_ticket
 	var bookings []string
 	var mails []string
 	var f_name string
@@ -21,7 +22,7 @@ func main() {
 	var email string
 	conf_name := "Go Conference"
 	for remaining_ticket > 0 /*or len(bookings) <= 500*/ {
-		greetusers(conf_name, remaining_ticket)
+		greetusers(conf_name, remaining_ticket) //incase of global variables we dont need any function parameters
 
 		//taking basic inputs
 		fmt.Println("Enter the first name of buyer:")
