@@ -58,7 +58,7 @@ func main() {
 		fmt.Printf("type of array:%T", booking)
 		fmt.Printf("\n\n")
 
-		firstNames := []string{} // thats how you declare a slice
+		firstNames := []string{} // that's how you declare a slice
 		for _, book := range booking {
 			var names = strings.Fields(book)
 			firstNames = append(firstNames, names[0])
