@@ -43,6 +43,7 @@ func main() {
 	if slices.Equal(t, t2) {
 		fmt.Println("t and t2 are equal")
 	}
+
 	twoD := make([][]int, 3)
 	for i := 0; i < 3; i++ { // To create a 2D slice, we can declare a slice of slices.
 		innerLen := i + 1
